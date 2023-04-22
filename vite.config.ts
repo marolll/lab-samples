@@ -13,4 +13,12 @@ export default defineConfig({
       },
     ],
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://sandbox.elabjournal.com",
+        changeOrigin: true,
+      },
+    },
+  },
 });

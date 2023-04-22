@@ -4,13 +4,19 @@ import "@/assets/styles/index.css";
 import router from "@/router/index.ts";
 import globalRegister from "@/global-register";
 import { axiosInit } from "@/plugins/axios";
+import { createPinia } from "pinia";
 
 const app = createApp(App);
 
-// USE PLUGINS
+// Router plugin for Front-end routing
 app.use(router);
 
-// GLOBALLY REGISTER FUNCTIONS / COMPONENTS
+
+// Pinia plugin
+const piniaStore = createPinia();
+app.use(piniaStore);
+
+// Globally register functions / components
 globalRegister(app);
 
 // Init axios

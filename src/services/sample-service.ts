@@ -1,14 +1,16 @@
-import api from "@/services/api";
 import Samples from "@/common/interfaces/api/samples";
+import BaseService from "@/services/base-service";
 
 // NAME
-const name = "samples";
+const name = "api/v1/samples";
 
 // CLASS SERVICE
-class SampleService {
+class SampleService extends BaseService {
   // INDEX METHOD - SHOW ALL
   index = async (): Promise<Samples> => {
-    return await api.get(name);
+    const response = await this.get(name);
+
+    return response;
   };
 }
 
