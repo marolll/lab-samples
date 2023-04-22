@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosConfig = () => {
+export const axiosInit = () => {
   const baseUrl = "https://sandbox.elabjournal.com/api/v1";
 
   // AXIOS DEFAULTS
@@ -9,5 +9,3 @@ const axiosConfig = () => {
   axios.defaults.headers.common["Authorization"] =
     "3c64fa0424718149b4e6a6372a284d81";
 };
-
-export default axiosConfig;

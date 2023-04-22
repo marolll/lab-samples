@@ -1,9 +1,8 @@
 import api from "@/services/api";
-import Samples from "@/common/interfaces/samples";
+import Samples from "@/common/interfaces/api/samples";
 
 // NAME
 const name = "samples";
-// const singularName = "batch";
 
 // CLASS SERVICE
 class SampleService {

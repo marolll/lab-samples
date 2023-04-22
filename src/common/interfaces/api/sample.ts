@@ -1,4 +1,4 @@
-import SampleType from "@/common/interfaces/sample-type";
+import SampleType from "@/common/interfaces/api/sample-type";
 
 export default interface Sample {
   owner: string;
