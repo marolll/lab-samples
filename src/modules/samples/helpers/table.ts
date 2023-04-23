@@ -14,13 +14,18 @@ export const samplesTableFields: ComputedRef<ComputedProp> = computed(() => ({
     field: "owner",
     type: "text",
   },
+  name: {
+    header: "Name",
+    field: "name",
+    type: "text",
+  },
   sampleID: {
-    header: "Sample Id",
+    header: "Identification",
     field: "sampleID",
     type: "text",
   },
   sampleType: {
-    header: "Sample Id",
+    header: "Sample name",
     field: "sampleType.name",
     type: "text",
   },

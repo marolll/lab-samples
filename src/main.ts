@@ -1,16 +1,20 @@
 import { createApp } from "vue";
 import App from "./App.vue";
-import "@/assets/styles/index.css";
+
 import router from "@/router/index.ts";
 import globalRegister from "@/global-register";
 import { axiosInit } from "@/plugins/axios";
 import { createPinia } from "pinia";
 
+// CSS
+import "@/assets/styles/index.css";
+import "@/assets/styles/colors.css";
+import "@/assets/styles/typography.css";
+
 const app = createApp(App);
 
 // Router plugin for Front-end routing
 app.use(router);
-
 
 // Pinia plugin
 const piniaStore = createPinia();

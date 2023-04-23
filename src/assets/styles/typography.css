@@ -1,0 +1,16 @@
+@import "variables.css";
+
+.page-title {
+  font-weight: 600;
+  font-size: var(--font-size-xl);
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.font-semibold {
+  font-weight: 600;
+}
