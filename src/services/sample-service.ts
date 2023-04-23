@@ -1,4 +1,7 @@
-import SamplesResponse from "@/common/interfaces/response/samples-response";
+import {
+  SampleResponse,
+  SamplesResponse,
+} from "@/common/interfaces/response/sample-response";
 import ServiceParams from "@/common/interfaces/service/service-params";
 
 import BaseService from "@/services/base-service";
@@ -10,8 +13,15 @@ const name: string = "samples";
 class SampleService extends BaseService {
   // INDEX METHOD - SHOW ALL
   index = async ({ params }: ServiceParams): Promise<SamplesResponse> => {
-    const indexPath = `${apiPath}/${name}`;
-    const response = await this.get({ path: indexPath, params: params });
+    const path = `${apiPath}/${name}`;
+    const response = await this.get({ path: path, params: params });
+
+    return response;
+  };
+
+  show = async ({ params, id }: ServiceParams): Promise<SampleResponse> => {
+    const path = `${apiPath}/${name}/${id}`;
+    const response = await this.get({ path: path, params: params });
     return response;
   };
 }

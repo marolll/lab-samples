@@ -2,6 +2,9 @@ import { App } from "vue";
 
 // COMPONENTS - UI
 import AppTable from "@/common/components/ui/AppTable.vue";
+import AppCard from "@/common/components/ui/AppCard.vue";
+import AppBarcode from "@/common/components/ui/AppBarcode.vue";
+import AppIcon from "@/common/components/icons/AppIcon.vue";
 
 interface ImportMeta {
   env: {
@@ -21,8 +24,10 @@ interface ImportMeta {
 // DECLARE GLOBAL COMPONENTS
 declare module "@vue/runtime-core" {
   export interface GlobalComponents {
-    // COMPONENTS - UI
     AppTable: typeof AppTable;
+    AppIcon: typeof AppIcon;
+    AppCard: typeof AppCard;
+    AppBarcode: typeof AppBarcode;
   }
 }
 

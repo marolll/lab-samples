@@ -10,6 +10,7 @@ import { createPinia } from "pinia";
 import "@/assets/styles/index.css";
 import "@/assets/styles/colors.css";
 import "@/assets/styles/typography.css";
+import "@/assets/styles/link.css";
 
 const app = createApp(App);
 

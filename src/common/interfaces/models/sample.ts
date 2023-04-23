@@ -16,6 +16,7 @@ export default interface Sample {
   name: string;
   description: string;
   note: string;
+  location: Location;
 }
 
 interface SampleType {
@@ -26,4 +27,19 @@ interface SampleType {
   backgroundColor: string;
   foregroundColor: string;
   showSectionsInTabs: boolean;
+}
+
+interface Location {
+  barcode: string;
+  name: string;
+  position: number;
+  storageLayerID: number;
+  parent?: LocationParent;
+}
+
+interface LocationParent {
+  barcode: string;
+  name: string;
+  position: number;
+  storageLayerID: number;
 }

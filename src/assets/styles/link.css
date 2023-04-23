@@ -1,0 +1,11 @@
+@import "variables.css";
+
+.router-link {
+  font-weight: bold;
+  color: var(--primary);
+  display: flex;
+  align-content: flex-end;
+  gap: 0.5rem;
+  text-decoration: none;
+  font-size: "inherit";
+}

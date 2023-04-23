@@ -1,8 +1,8 @@
 <template>
   <section id="introduction">
-    <h1 class="page-title">Samples table</h1>
+    <h1>Samples table</h1>
   </section>
-  <section id="table-section">
+  <section v-if="samples.length" id="table-section">
     <AppTable
       :data="samples"
       :fields="samplesTableFields"

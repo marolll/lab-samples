@@ -1,12 +1,18 @@
 import type { App } from "vue";
 
-// COMPONENTS - UI
+// COMPONENTS
 import AppTable from "@/common/components/ui/AppTable.vue";
+import AppCard from "@/common/components/ui/AppCard.vue";
+import AppIcon from "@/common/components/icons/AppIcon.vue";
+import AppBarcode from "@/common/components/ui/AppBarcode.vue";
 
 // REGISTER GLOBAL COMPONENTS
 const registerComponents = (app: App<Element>) => {
-  // COMPONENTS - UI
+  // COMPONENTS
   app.component("AppTable", AppTable);
+  app.component("AppCard", AppCard);
+  app.component("AppIcon", AppIcon);
+  app.component("AppBarcode", AppBarcode);
 };
 
 import helpers from "@/common/helpers/helpers";

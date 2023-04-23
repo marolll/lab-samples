@@ -20,7 +20,7 @@ export const useSamplesStore = defineStore("samples", () => {
   // ********
   async function fetchSamples() {
     const response = await sampleService.index({
-      params: `${paginationParams.value}&$expand=location`,
+      params: `${paginationParams.value}`,
     });
 
     if (isOk(response)) {

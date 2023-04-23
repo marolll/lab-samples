@@ -3,7 +3,7 @@ import appRoutes from "@/router/app-routes";
 
 const routes: RouteRecordRaw[] = [
   {
-    path: `${appRoutes.comparment.path}/:id`,
+    path: `${appRoutes.comparment.path}/:sampleId`,
     name: appRoutes.comparment.name,
     component: () => import("@/views/comparment/index.vue"),
   },

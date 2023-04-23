@@ -17,3 +17,7 @@ body {
 *:after {
   box-sizing: inherit;
 }
+
+section {
+  margin-bottom: 1.5rem;
+}

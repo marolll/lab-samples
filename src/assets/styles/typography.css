@@ -1,10 +1,38 @@
 @import "variables.css";
 
-.page-title {
+h1 {
   font-weight: 600;
   font-size: var(--font-size-xl);
   margin-top: 0;
   margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: var(--font-size-lg);
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+}
+
+h3 {
+  font-weight: 600;
+  font-size: var(--font-size-normal);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-weight: 500;
+  font-size: var(--font-size-normal);
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+h1:first-letter,
+h2:first-letter,
+h3:first-letter,
+h4:first-letter {
+  text-transform: uppercase;
 }
 
 .font-bold {
