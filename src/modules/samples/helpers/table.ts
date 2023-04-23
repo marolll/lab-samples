@@ -52,6 +52,11 @@ export const samplesTableFields: ComputedRef<ComputedProp> = computed(() => ({
       false_val: "No",
     },
   },
+  comparment: {
+    header: "Comparment",
+    field: "",
+    type: "",
+  },
 }));
 
 interface ComputedProp {

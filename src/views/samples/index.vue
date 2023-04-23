@@ -12,6 +12,9 @@
       <template #sampleType="{ item }">
         <SampleTableData :item="item" />
       </template>
+      <template #comparment="{ item }">
+        <ComparmentTableData :item="item" />
+      </template>
     </AppTable>
   </section>
 </template>
@@ -22,6 +25,7 @@ import { onMounted } from "vue";
 import { storeToRefs } from "pinia";
 import { samplesTableFields } from "@/modules/samples/helpers/table";
 import SampleTableData from "@/modules/samples/components/SampleTableData.vue";
+import ComparmentTableData from "@/modules/samples/components/ComparmentTableData.vue";
 
 const samplesStore = useSamplesStore();
 

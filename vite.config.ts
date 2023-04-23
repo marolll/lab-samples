@@ -2,12 +2,6 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import { fileURLToPath, URL } from "url";
 
-interface ImportMetaEnv {
-  readonly VITE_API_BASE_URL: string;
-  readonly VITE_API_PATH: string;
-  // more env variables...
-}
-
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue()],

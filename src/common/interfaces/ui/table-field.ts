@@ -1,7 +1,7 @@
 export default interface TableField {
   header: string;
   field: string;
-  type: "date" | "text" | "boolean";
+  type: "date" | "text" | "boolean" | "";
   disabled?: boolean;
   boolean?: {
     true_val: string;

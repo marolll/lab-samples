@@ -6,10 +6,9 @@ export default class BaseService {
   // GET METHOD
   get = async <TResponse>({ path, params }: ServiceParams): Promise<any> => {
     try {
-      const response = await axios.get<TResponse>(
-        `${path}${params && "?"}${params && params}`
-      );
-      console.log("GET RESPONSE:", response);
+      let fullPath = path;
+      params && (path += `?${params}`);
+      const response = await axios.get<TResponse>(`${fullPath}`);
       return response;
     } catch (error) {
       return error;

@@ -1,12 +1,18 @@
 // For using the same routes among the app - mainly for links
 export class AppRoutes {
   samples: AppRoute;
+  comparment: AppRoute;
 
   constructor() {
     // Samples page
     this.samples = {
       path: "/samples",
       name: "samples",
+    };
+
+    this.comparment = {
+      path: "/comparment",
+      name: "comparment",
     };
   }
 }
