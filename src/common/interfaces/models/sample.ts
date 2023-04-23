@@ -1,5 +1,3 @@
-import SampleType from "@/common/interfaces/api/sample-type";
-
 export default interface Sample {
   owner: string;
   archived: boolean;
@@ -18,4 +16,14 @@ export default interface Sample {
   name: string;
   description: string;
   note: string;
+}
+
+interface SampleType {
+  sampleTypeID: number;
+  userID: number;
+  groupID: number;
+  name: string;
+  backgroundColor: string;
+  foregroundColor: string;
+  showSectionsInTabs: boolean;
 }

@@ -1,15 +1,16 @@
-import Samples from "@/common/interfaces/api/samples";
+import SamplesResponse from "@/common/interfaces/response/samples-response";
+import ServiceParams from "@/common/interfaces/service/service-params";
+import { apiPath } from "@/config";
 import BaseService from "@/services/base-service";
 
-// NAME
-const name = "api/v1/samples";
+const name: string = "samples";
 
 // CLASS SERVICE
 class SampleService extends BaseService {
   // INDEX METHOD - SHOW ALL
-  index = async (): Promise<Samples> => {
-    const response = await this.get(name);
-
+  index = async ({ params }: ServiceParams): Promise<SamplesResponse> => {
+    const indexPath = `${apiPath}/${name}`;
+    const response = await this.get({ path: indexPath, params: params });
     return response;
   };
 }

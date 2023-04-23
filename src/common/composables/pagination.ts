@@ -10,19 +10,17 @@ export const usePagination = ({ callback, defaultPagination }: Params) => {
   // ***********
   // SETTERS
   // ***********
-  const setPage = (newPage: string) => {
-    pagination.value.page = newPage;
-    callback && callback();
+  const setPage = ({ value, isCallback = true }: SetParams) => {
+    pagination.value.page = value;
+    isCallback && callback();
   };
-
-  const setRecords = (newRecords: string) => {
-    pagination.value.records = newRecords;
-    callback && callback();
+  const setRecords = ({ value, isCallback = true }: SetParams) => {
+    pagination.value.records = value;
+    isCallback && callback();
   };
-
-  const setTotalRecords = (newTotalRecords: string) => {
-    pagination.value.totalRecords = newTotalRecords;
-    callback && callback();
+  const setTotalRecords = ({ value, isCallback = false }: SetParams) => {
+    pagination.value.totalRecords = value;
+    isCallback && callback();
   };
 
   const setDefaultPagination = () => {
@@ -46,6 +44,10 @@ export const usePagination = ({ callback, defaultPagination }: Params) => {
   const totalRecords: ComputedRef<string> = computed(
     () => pagination.value.totalRecords
   );
+  const paginationParams: ComputedRef<string> = computed(
+    () =>
+      `$page=${pagination?.value?.page}&$records=${pagination?.value?.records}`
+  );
 
   // ************
   // ON MOUNTED
@@ -62,6 +64,7 @@ export const usePagination = ({ callback, defaultPagination }: Params) => {
     page,
     records,
     totalRecords,
+    paginationParams,
   };
 };
 
@@ -76,6 +79,11 @@ interface Pagination {
   page: string;
   records: string;
   totalRecords: string;
+}
+
+interface SetParams {
+  value: any;
+  isCallback?: boolean;
 }
 
 type PaginationKeyType = "page" | "records" | "totalRecords";
