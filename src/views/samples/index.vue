@@ -2,7 +2,7 @@
   <section id="introduction">
     <h1>Samples</h1>
   </section>
-  <section v-if="samples.length" id="table-section">
+  <section v-if="samples?.length" id="table-section">
     <AppTable
       :data="samples"
       :fields="samplesTableFields"

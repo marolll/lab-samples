@@ -18,7 +18,7 @@
         </thead>
 
         <!-- TABLE BODY -->
-        <tbody class="table-body bg-light" v-if="data.length">
+        <tbody class="table-body bg-light" v-if="data?.length">
           <tr class="table-row" v-for="item in data" :key="item.id">
             <template
               v-for="(field, fieldIndex) in fields"

@@ -5,7 +5,9 @@ import svgLoader from "vite-svg-loader";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/lab-samples",
+  // ONLY FOR GH PAGES
+  // base: "/lab-samples/",
+
   plugins: [vue(), svgLoader()],
   resolve: {
     alias: [
