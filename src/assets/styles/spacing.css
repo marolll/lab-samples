@@ -1,0 +1,18 @@
+.pb-xs {
+  padding-bottom: 0.3rem !important;
+}
+.pb-sm {
+  padding-bottom: 0.5rem !important;
+}
+
+.pb-normal {
+  padding-bottom: 1rem;
+}
+
+.pb-md {
+  padding-bottom: 1.5em;
+}
+
+.pb-lg {
+  padding-bottom: 2rem;
+}

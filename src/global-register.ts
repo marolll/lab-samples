@@ -5,6 +5,7 @@ import AppTable from "@/common/components/ui/AppTable.vue";
 import AppCard from "@/common/components/ui/AppCard.vue";
 import AppIcon from "@/common/components/icons/AppIcon.vue";
 import AppBarcode from "@/common/components/ui/AppBarcode.vue";
+import AppTooltip from "@/common/components/ui/AppTooltip.vue";
 
 // REGISTER GLOBAL COMPONENTS
 const registerComponents = (app: App<Element>) => {
@@ -13,6 +14,7 @@ const registerComponents = (app: App<Element>) => {
   app.component("AppCard", AppCard);
   app.component("AppIcon", AppIcon);
   app.component("AppBarcode", AppBarcode);
+  app.component("AppTooltip", AppTooltip);
 };
 
 import helpers from "@/common/helpers/helpers";

@@ -1,6 +1,6 @@
 <template>
   <section id="introduction">
-    <h1>Samples table</h1>
+    <h1>Samples</h1>
   </section>
   <section v-if="samples.length" id="table-section">
     <AppTable
@@ -31,8 +31,7 @@ const samplesStore = useSamplesStore();
 
 const { samples, pagination } = storeToRefs(samplesStore);
 const { fetchSamples, setPage } = samplesStore;
-onMounted(() => {
-  // Fetch samples
-  fetchSamples();
-});
+
+// ON MOUNTED
+onMounted(() => fetchSamples());
 </script>

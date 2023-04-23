@@ -1,22 +1,19 @@
 <template>
-  <AppCard>
+  <AppCard bg="#f6f6f6">
     <template #header
-      ><h3>Container: {{ parent?.name || "" }}</h3>
+      ><h3 class="pb-normal">Container: {{ parent?.name || "" }}</h3>
       <AppBarcode v-if="parent?.barcode" :barcode="parent.barcode" />
     </template>
     <template #body>
-      <AppCard bg="#fafafa" :header="false">
-        <template #body
-          ><h4>Sample: {{ sample?.name || "" }}</h4>
-          <AppBarcode v-if="sample?.barcode" :barcode="sample.barcode" />
-        </template>
-      </AppCard>
+      <DetailLocationSample :sample="sample" />
     </template>
   </AppCard>
 </template>
 
 <script setup lang="ts">
 import type Sample from "@/common/interfaces/models/sample";
+import DetailLocationSample from "@/modules/comparment/components/DetailLocationSample.vue";
+
 import { computed } from "vue";
 interface Props {
   sample: Sample;

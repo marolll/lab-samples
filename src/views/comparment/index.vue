@@ -7,7 +7,7 @@
     </RouterLink>
   </section>
   <section v-if="sample" id="comparment-detail">
-    <Detail :sample="sample" />
+    <Detail :sample="sample" :storageLayer="storageLayer" />
   </section>
 </template>
 
@@ -22,8 +22,8 @@ import { storeToRefs } from "pinia";
 const route: RouteLocationNormalizedLoaded = useRoute();
 const comparmentStore = useComparmentStore();
 
-const { sample } = storeToRefs(comparmentStore);
-const { fetchSample } = comparmentStore;
+const { sample, storageLayer } = storeToRefs(comparmentStore);
+const { fetchSample, fetchStorageLayer } = comparmentStore;
 
 // On mounted
 onMounted(async () => {
@@ -33,12 +33,12 @@ onMounted(async () => {
     // Fetch sample
     await fetchSample(Number(id));
 
-    // const storageLayerId = sample.value?.storageLayerID;
+    const storageLayerId = sample.value?.storageLayerID;
 
     // Fetch storage layer
-    // if (sample.value?.storageLayerID) {
-    //   fetchStorageLayer(Number(storageLayerId));
-    // }
+    if (sample.value?.storageLayerID) {
+      fetchStorageLayer(Number(storageLayerId));
+    }
   }
 });
 </script>

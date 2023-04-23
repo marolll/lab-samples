@@ -1,7 +1,7 @@
 <template>
-  <AppCard bg="#fafafa" :header="false">
+  <AppCard :header="false">
     <template #body
-      ><h4>Sample: {{ sample?.name || "" }}</h4>
+      ><h4 class="pb-normal">Sample: {{ sample?.name || "" }}</h4>
       <AppBarcode v-if="sample?.barcode" :barcode="sample.barcode" />
     </template>
   </AppCard>

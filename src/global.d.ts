@@ -5,6 +5,7 @@ import AppTable from "@/common/components/ui/AppTable.vue";
 import AppCard from "@/common/components/ui/AppCard.vue";
 import AppBarcode from "@/common/components/ui/AppBarcode.vue";
 import AppIcon from "@/common/components/icons/AppIcon.vue";
+import AppTooltip from "@/common/components/ui/AppTooltip.vue";
 
 interface ImportMeta {
   env: {
@@ -28,6 +29,7 @@ declare module "@vue/runtime-core" {
     AppIcon: typeof AppIcon;
     AppCard: typeof AppCard;
     AppBarcode: typeof AppBarcode;
+    AppTooltip: typeof AppTooltip;
   }
 }
 

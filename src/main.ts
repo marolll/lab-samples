@@ -11,6 +11,8 @@ import "@/assets/styles/index.css";
 import "@/assets/styles/colors.css";
 import "@/assets/styles/typography.css";
 import "@/assets/styles/link.css";
+import "@/assets/styles/spacing.css";
+import "@/assets/styles/containers.css";
 
 const app = createApp(App);
 
