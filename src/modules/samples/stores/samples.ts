@@ -4,6 +4,7 @@ import { ref } from "vue";
 import Sample from "@/common/interfaces/api/sample";
 import { isOk } from "@/common/helpers/api";
 import sampleService from "@/services/sample-service";
+import { usePagination } from "@/common/composables/pagination";
 
 // const service = new InvoiceService();
 export const useSamplesStore = defineStore("samples", () => {
@@ -12,16 +13,22 @@ export const useSamplesStore = defineStore("samples", () => {
   // ************
   const samples = ref<Sample[]>([]);
 
-  const fetchSamples = async () => {
+  // Reusable pagination composable with fetch effect to reduce code amount
+  const { setPage, setTotalRecords } = usePagination({
+    callback: fetchSamples,
+  });
+
+  async function fetchSamples() {
     const response = await sampleService.index();
 
     if (isOk(response)) {
       samples.value = response?.data;
+      setTotalRecords(response.totalRecords);
     }
-  };
+  }
 
-  // **************
+  // ********
   // RETURN
-  // **************
-  return { fetchSamples, samples };
+  // ********
+  return { setPage, fetchSamples, samples };
 });

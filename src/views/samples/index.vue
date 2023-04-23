@@ -9,6 +9,7 @@ const samplesStore = useSamplesStore();
 // const { samples } = storeToRefs(samplesStore);
 const { fetchSamples } = samplesStore;
 onMounted(() => {
+  // Fetch samples
   fetchSamples();
 });
 </script>
