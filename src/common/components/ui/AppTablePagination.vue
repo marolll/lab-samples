@@ -170,6 +170,7 @@ const pages = computed(() => {
 
 .pagination-button:disabled.active-button {
   font-weight: 700;
-  color: black;
+  background-color: #334155;
+  color: #fafaf9;
 }
 </style>

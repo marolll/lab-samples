@@ -2,12 +2,20 @@
   <td class="table-data">
     <!-- TEXT / NUMBER FIELD -->
     <span v-if="field.type === 'text'">
-      {{ $helpers.getNestedProp(item, field.field, "-") }}
+      {{ $helpers.getNestedProp(item, field.field) }}
     </span>
 
     <span v-else-if="field.type === 'date'">
       {{
         $helpers.getDateStr($helpers.getNestedProp(item, field.field)) || "-"
+      }}
+    </span>
+
+    <span v-else-if="field.type === 'boolean'">
+      {{
+        $helpers.getNestedProp(item, field.field) === true
+          ? field?.boolean?.true_val
+          : field?.boolean?.false_val
       }}
     </span>
   </td>

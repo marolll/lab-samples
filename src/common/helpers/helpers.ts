@@ -11,8 +11,8 @@ export const getNestedProp = (
     }
   });
 
-  // Also zero would be ""=> This handler makes sure it will work
-  if (obj === 0) return 0;
+  // Zero and false is possible return, empty would be empty placeholder
+  if (obj === 0 || obj === false) return obj;
 
   return obj || emptyVal;
 };

@@ -4,6 +4,16 @@ import TableField from "@/common/interfaces/ui/table-field";
 import { ComputedRef, computed } from "vue";
 
 export const samplesTableFields: ComputedRef<ComputedProp> = computed(() => ({
+  sampleType: {
+    header: "Sample name",
+    field: "sampleType.name",
+    type: "text",
+  },
+  name: {
+    header: "Name",
+    field: "name",
+    type: "text",
+  },
   created: {
     header: "Created",
     field: "created",
@@ -14,20 +24,33 @@ export const samplesTableFields: ComputedRef<ComputedProp> = computed(() => ({
     field: "owner",
     type: "text",
   },
-  name: {
-    header: "Name",
-    field: "name",
-    type: "text",
-  },
   sampleID: {
     header: "Identification",
     field: "sampleID",
     type: "text",
   },
-  sampleType: {
-    header: "Sample name",
-    field: "sampleType.name",
+  position: {
+    header: "Position",
+    field: "position",
     type: "text",
+  },
+  checkedOut: {
+    header: "Checked out",
+    field: "checkedOut",
+    type: "boolean",
+    boolean: {
+      true_val: "Yes",
+      false_val: "No",
+    },
+  },
+  archived: {
+    header: "Archived",
+    field: "archived",
+    type: "boolean",
+    boolean: {
+      true_val: "Yes",
+      false_val: "No",
+    },
   },
 }));
 

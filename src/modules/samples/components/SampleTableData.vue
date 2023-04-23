@@ -1,6 +1,6 @@
 <template>
   <td class="table-data" :style="tdStyle">
-    <span :style="spanStyle">
+    <span>
       {{ item?.sampleType?.name }}
     </span>
   </td>
@@ -14,11 +14,6 @@ interface Props {
 }
 
 const props = defineProps<Props>();
-
-const spanStyle: StyleValue = {
-  padding: "0.2rem 0.4rem",
-  borderRadius: "0.3rem",
-};
 
 const tdStyle: StyleValue = {
   color: `#${props.item.sampleType.foregroundColor}`,

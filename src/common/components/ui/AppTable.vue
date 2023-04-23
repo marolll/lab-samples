@@ -58,6 +58,7 @@ defineProps<Props>();
 <style scoped>
 .table-with-pagination-wrapper {
   width: 100%;
+  font-size: 0.95rem;
 }
 .table-wrapper {
   max-width: max-content;
