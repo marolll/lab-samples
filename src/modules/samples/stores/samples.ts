@@ -10,9 +10,10 @@ export const useSamplesStore = defineStore("samples", () => {
   // STATES
   // *******
   const samples = ref<Sample[]>([]);
-  const { setPage, setTotalRecords, paginationParams } = usePagination({
-    callback: () => fetchSamples(),
-  });
+  const { setPage, setTotalRecords, pagination, paginationParams } =
+    usePagination({
+      callback: () => fetchSamples(),
+    });
 
   // ********
   // ACTIONS
@@ -33,5 +34,5 @@ export const useSamplesStore = defineStore("samples", () => {
   // *******
   // RETURN
   // *******
-  return { setPage, fetchSamples, samples };
+  return { setPage, pagination, fetchSamples, samples };
 });

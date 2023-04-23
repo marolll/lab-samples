@@ -1,4 +1,7 @@
 import { type ComputedRef, computed, onMounted, ref } from "vue";
+import Pagination, {
+  PaginationSetParams,
+} from "@/common/interfaces/ui/pagination";
 
 // REUSABLE DATA QUERY WITH ANY KIND OF DATA
 export const usePagination = ({ callback, defaultPagination }: Params) => {
@@ -10,15 +13,19 @@ export const usePagination = ({ callback, defaultPagination }: Params) => {
   // ***********
   // SETTERS
   // ***********
-  const setPage = ({ value, isCallback = true }: SetParams) => {
+  const setPage = ({ value, isCallback = true }: PaginationSetParams) => {
     pagination.value.page = value;
+    console.log("VALUE:", value);
     isCallback && callback();
   };
-  const setRecords = ({ value, isCallback = true }: SetParams) => {
+  const setRecords = ({ value, isCallback = true }: PaginationSetParams) => {
     pagination.value.records = value;
     isCallback && callback();
   };
-  const setTotalRecords = ({ value, isCallback = false }: SetParams) => {
+  const setTotalRecords = ({
+    value,
+    isCallback = false,
+  }: PaginationSetParams) => {
     pagination.value.totalRecords = value;
     isCallback && callback();
   };
@@ -65,6 +72,7 @@ export const usePagination = ({ callback, defaultPagination }: Params) => {
     records,
     totalRecords,
     paginationParams,
+    pagination,
   };
 };
 
@@ -74,17 +82,6 @@ const defaultPaginationState: Pagination = {
   records: "8",
   totalRecords: "0",
 };
-
-interface Pagination {
-  page: string;
-  records: string;
-  totalRecords: string;
-}
-
-interface SetParams {
-  value: any;
-  isCallback?: boolean;
-}
 
 type PaginationKeyType = "page" | "records" | "totalRecords";
 
